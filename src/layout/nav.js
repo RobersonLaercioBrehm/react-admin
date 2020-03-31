@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
+import { FiUsers, FiUser, FiBox, FiCalendar, FiClipboard, FiCoffee, FiGrid } from 'react-icons/fi';
 
 import './nav.css';
 
@@ -12,79 +12,47 @@ export default function Nav() {
 					<span>Categoria</span>
 				</li>
 				<li>
-					<Link to="/">
-						<i class='mdi mdi-format-list-text'></i>
-						<span>Home</span>
-					</Link>
-				</li>
-				<li>
-					<Link to="/clientes">
-						<i class='mdi mdi-home'></i>
+					<NavLink to='/clientes'>
+						<FiUsers />
 						<span>Clientes</span>
-					</Link>
+					</NavLink>
 				</li>
 				<li>
-					<a href='./admin' class='active'>
-						<i class='mdi mdi-cogs'></i>
-						<span>Icone</span>
-					</a>
+					<NavLink to='/profissionais'>
+						<FiCoffee />
+						<span>Profissionais</span>
+					</NavLink>
 				</li>
-				<li class='line'></li>
 				<li>
-					<a href='./admin'>
-						<b>9</b>
-						<i class='mdi mdi-pencil'></i>
-						<span>Icone e marcador</span>
-					</a>
+					<NavLink to='/servicos'>
+						<FiBox />
+						<span>Serviços</span>
+					</NavLink>
 				</li>
-				<li class='sub'>
-					<a href='./admin'>
-						<i class='mdi mdi-check'></i>
-						<span>Submenu</span>
-					</a>
-					<ul>
-						<li>
-							<a href='./admin'>
-								<span>Icone</span>
-							</a>
-						</li>
-						<li>
-							<a href='./admin'>
-								<b>9</b>
-								<span>Icone</span>
-							</a>
-						</li>
-						<li>
-							<a href='./admin'>
-								<span>Icone</span>
-							</a>
-						</li>
-					</ul>
+				<li>
+					<NavLink to='/agenda'>
+						<FiCalendar />
+						<span>Agenda</span>
+					</NavLink>
 				</li>
-				<li class='sub'>
-					<a href='./admin' class='active'>
-						<b>9</b>
-						<i class='mdi mdi-mail'></i>
-						<span>Submenu</span>
-					</a>
-					<ul>
-						<li>
-							<a href='./admin'>
-								<span>Icone</span>
-							</a>
-						</li>
-						<li>
-							<a href='./admin' class='active'>
-								<b>9</b>
-								<span>Icone</span>
-							</a>
-						</li>
-						<li>
-							<a href='./admin'>
-								<span>Icone</span>
-							</a>
-						</li>
-					</ul>
+				<li>
+					<NavLink to='/comanda'>
+						<FiClipboard />
+						<span>Comanda</span>
+					</NavLink>
+				</li>
+				<li className='line'></li>
+				<li>
+					<NavLink to='/admins'>
+						<FiUser/>
+						<span>Administradores</span>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink to='/estabelecimentos'>
+						<FiGrid/>
+						<span>Estabelecimentos</span>
+					</NavLink>
 				</li>
 			</ul>
 		</nav>

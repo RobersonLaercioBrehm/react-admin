@@ -19,9 +19,11 @@ nav > ul > li > a {
 	/* transition: background-color ease-in-out .15s, color ease-in-out .15s; */
 }
 
-/* nav li i {
-	margin-right: 5px;
-} */
+nav li svg {
+	margin-right: 6px;
+	position:relative;
+	top: 2px;
+}
 
 nav li b {
 	float: right;

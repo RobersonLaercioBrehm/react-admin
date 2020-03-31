@@ -13,12 +13,19 @@ header button {
 }
 
 header a:hover,
-header button:hover {
+header button:hover,
+header button.active {
 	background: rgba(0, 0, 0, 0.05);
 }
 
 header img {
 	max-height: 90%;
+}
+
+header li svg {
+	margin-right: 6px;
+	position:relative;
+	top: 2px;
 }
 
 /* Header */
@@ -61,7 +68,7 @@ header li.sub ul {
 	display: none;
 	position: absolute;
 	float: left;
-	top: 38px;
+	top: px;
 	/* padding: 4px 0px; */
 	min-width: 200px;
 	color: #333;
@@ -109,7 +116,7 @@ header li.sub ul li.footer {
 	font-size: 12px;
 }
 /* sub ul active */
-header li.sub a.active + ul {
+header li.sub button.active + ul {
 	display: block;
 }
 /* flip do ul na direita */

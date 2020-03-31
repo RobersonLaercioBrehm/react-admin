@@ -1,89 +1,99 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiCalendar, FiBell, FiPlus, FiMenu, FiSettings, FiFeather } from 'react-icons/fi';
+
 
 import './header.css';
 
 export default function Header() {
+
+	function toggle(value, target) {
+		if (typeof (target) == 'string') {
+			let dom = document.querySelector(target);
+			dom.classList.toggle(value);
+		}else if(typeof (target) == 'object'){
+			target.target.classList.toggle(value);
+		}
+	}
+
 	return (
 		<header>
-			<div class='header'>
+			<div className='header'>
 				<ul>
 					<li>
-						<a href='./admin'>
-							<i class='lnr lnr-rocket'></i>
+						<Link to='/'>
+							<FiFeather />
 							<span>Admin</span>
-						</a>
+						</Link>
 					</li>
 				</ul>
 				<ul>
-					<li class='nav'>
-						<button js-ui-toggle='ui-nav' js-ui-target='#app'>
-							<i class='lnr lnr-menu'></i>
+					<li className='nav'>
+						<button onClick={event => toggle('active', '#app')}>
+							<FiMenu />
 						</button>
 					</li>
-					<li class='nav'>
+					<li className='nav'>
 						<button js-ui-toggle='ui-collapse' js-ui-target='#app'>
-							<i class='lnr lnr-cog'></i>
+							<FiSettings />
 						</button>
 					</li>
 				</ul>
 			</div>
-			<div class='collapse'>
+			<div className='collapse'>
 				<ul>
 					<li>
 						<button js-ui-toggle='ui-nav-icon' js-ui-target='#app'>
-							<i class='mdi mdi-format-indent-decrease'></i>
+							<FiMenu />
 						</button>
 					</li>
-					<li class='sub'>
-						<a href='#'>
-							<i class='mdi mdi-plus-thick'></i>
+					<li className='sub'>
+						<button onClick={event => toggle('active', event)}>
+							<FiPlus />
 							Novo
-						</a>
+						</button>
 						<ul>
-							<li><a href='./login'><i class='mdi mdi-cog'></i>Configuração</a></li>
-							<li><a href='./login'><i class='mdi mdi-image'></i>Perfil</a></li>
-							<li class='line'></li>
-							<li><a href='./login'><i class='mdi mdi-door'></i>Sair</a></li>
+							<li><Link to='./login'><i className='mdi mdi-cog'></i>Configuração</Link></li>
+							<li><Link to='./login'><i className='mdi mdi-image'></i>Perfil</Link></li>
+							<li className='line'></li>
+							<li><Link to='./login'><i className='mdi mdi-door'></i>Sair</Link></li>
 						</ul>
 					</li>
 				</ul>
 				<ul>
 					<li>
 						<span>
-							<i class='mdi mdi-calendar-outline'></i>
+							<FiCalendar />
 							Sexta-Feira, 12 Março de 2020
 						</span>
 					</li>
-					<li class='sub'>
-						<a href='#'>
-							<i class='mdi mdi-bell-outline'></i>
-						</a>
+					<li className='sub'>
+						<button onClick={event => toggle('active', event)}>
+							<FiBell />
+						</button>
 						<ul>
-							<li class='header'>Você tem 2 notificações</li>
+							<li className='header'>Você tem 2 notificações</li>
 							<li>
-								<a href='./login'>
-								</a>
+								<Link to='./login'>
+								</Link>
 							</li>
-							<li class='line'></li>
-							<li><a href='./login'>Configuração<br /><small>10 minutos atrás</small></a></li>
-							<li class='line'></li>
-							<li><a href='./login'><i class='mdi mdi-image'></i>Perfil</a></li>
-							<li class='line'></li>
-							<li class='footer'><a href=''>Ver todas as notificações</a></li>
+							<li className='line'></li>
+							<li><Link to='./login'>Configuração<br /><small>10 minutos atrás</small></Link></li>
+							<li className='line'></li>
+							<li><Link to='./login'><i className='mdi mdi-image'></i>Perfil</Link></li>
+							<li className='line'></li>
+							<li className='footer'><Link to=''>Ver todas as notificações</Link></li>
 						</ul>
 					</li>
-					<li class='sub'>
-						<a href=''>
-							<span>
-								Nome
-								<small>Nome</small>
-							</span>
-						</a>
+					<li className='sub'>
+						<button onClick={event => toggle('active', event)}>
+							Nome
+						</button>
 						<ul>
-							<li><a href='./login'><i class='mdi mdi-cog'></i>Configuração</a></li>
-							<li><a href='./login'><i class='mdi mdi-image'></i>Perfil</a></li>
-							<li class='line'></li>
-							<li><a href='./login'><i class='mdi mdi-logout'></i>Sair</a></li>
+							<li><Link to='./login'><i className='mdi mdi-cog'></i>Configuração</Link></li>
+							<li><Link to='./login'><i className='mdi mdi-image'></i>Perfil</Link></li>
+							<li className='line'></li>
+							<li><Link to='./login'><i className='mdi mdi-logout'></i>Sair</Link></li>
 						</ul>
 					</li>
 				</ul>
