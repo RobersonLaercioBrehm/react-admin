@@ -1,0 +1,23 @@
+/**
+ * Resets
+ */
+*,
+::after,
+::before {
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+	list-style: none;
+	border: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+}
+a,
+a:hover {
+	text-decoration: none;
+}

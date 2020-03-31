@@ -1,0 +1,80 @@
+/**
+ * Esqueleto
+ */
+:root {
+	--font-sans-serif: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+	--config-nav: 200px;
+	--config-aside: 200px;
+}
+html,
+body,
+#root {
+	height: 100%;
+	width: 100%;
+}
+#app {
+	font-family: var(--font-sans-serif);
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #58666e;
+	display: grid;
+	grid-template-columns: var(--config-nav) auto var(--config-aside);
+	grid-template-rows: 50px auto 50px;
+	min-height: 100%;
+}
+
+a {
+	color: #58666e;
+}
+
+header {
+	grid-column: 1/4;
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: var(--config-nav) auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	z-index: 9;
+}
+
+nav {
+	grid-column: 1;
+	grid-row: 2/4;
+	background: #1c2b36;
+}
+
+main {
+	grid-column: 2/4;
+	grid-row: 2;
+}
+
+aside {
+	display: none;
+	grid-column: 3;
+	grid-row: 2/4;
+	background: #fff;
+	border-left: rgba(0, 0, 0, 0.125) solid 1px;
+}
+
+footer {
+	grid-column: 2/4;
+	grid-row: 3;
+	background: #fff;
+	border-top: rgba(0, 0, 0, 0.125) solid 1px;
+}
+
+footer,
+header > div.header,
+header > div.collapse {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+main > div.wrap,
+footer,
+aside {
+	padding: 10px 15px;
+}
