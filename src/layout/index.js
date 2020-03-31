@@ -2,11 +2,11 @@ import React from 'react';
 
 import './index.css';
 
-import Header from './header';
-import Nav from './nav';
-import Main from './main';
-import Footer from './footer';
-import Aside from './aside';
+import Header from './inc/header';
+import Nav from './inc/nav';
+import Main from './inc/main';
+import Footer from './inc/footer';
+import Aside from './inc/aside';
 
 export default function Layout({children}) {
 	return (

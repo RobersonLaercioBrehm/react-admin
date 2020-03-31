@@ -1,8 +1,9 @@
 import React from 'react';
-
 import './main.css';
 
-export default function Main({children}) {
+// import Title from './title';
+
+export default function Main({ children }) {
 	return (
 		<main>
 			{children}

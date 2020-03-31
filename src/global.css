@@ -21,3 +21,60 @@ a,
 a:hover {
 	text-decoration: none;
 }
+
+/**
+ * Content
+ */
+
+main > div.main-header {
+	padding: 20px 15px;
+	background: #fff;
+	border-bottom: rgba(0, 0, 0, 0.125) solid 1px;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+main > div svg {
+	margin-right: 6px;
+	position:relative;
+	top: 2px;
+}
+
+main > div.main-header > div:last-child {
+	text-align: right;
+	flex-grow: 1;
+}
+
+main > div.main-header > div:first-child {
+	padding-right: 10px;
+	font-size: 18px;
+}
+
+main > div.main-header h1 small {
+	font-weight: 100;
+}
+
+main > div.main-header span {
+	font-size: 13px;
+}
+
+main > div.main-breadcrumb {
+	padding: 7px 15px;
+	background: #fafafa;
+	border-bottom: rgba(0, 0, 0, 0.125) solid 1px;
+}
+
+main > div.main-breadcrumb ul {
+	display: flex;
+}
+
+main > div.main-breadcrumb ul li:before {
+	content: '/';
+	padding: 0px 10px;
+}
+
+main > div.main-breadcrumb ul li:first-child:before {
+	content: ' ';
+	padding: 0px;
+	padding-right: 10px;
+}

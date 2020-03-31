@@ -13,6 +13,7 @@ header button {
 }
 
 header a:hover,
+header a.active,
 header button:hover,
 header button.active {
 	background: rgba(0, 0, 0, 0.05);
@@ -116,6 +117,9 @@ header li.sub ul li.footer {
 	font-size: 12px;
 }
 /* sub ul active */
+header li.sub a.active + ul {
+	display: block;
+}
 header li.sub button.active + ul {
 	display: block;
 }
@@ -124,12 +128,11 @@ header > div > ul:last-child li.sub ul {
 	right: 0;
 }
 
-/* 
 #header>div.header button {
 	display: none;
-} */
+}
 
-/* header > div.header li.nav {
+header > div.header li.nav {
 	display: none;
-} */
+}
 
